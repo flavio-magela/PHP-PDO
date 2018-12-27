@@ -1,7 +1,12 @@
-<?php require_once 'classes/Categoria.php'; 
-
-    $categoria = new Categoria();
-    $lista = $categoria->listar();
+<?php require_once 'global.php' ?>
+<?php 
+    try {            
+            $lista = Categoria::listar();
+    } catch (Exception $e) {
+        
+        Erro::trataErro($e);
+    }
+    
 ?>
 <?php require_once 'cabecalho.php' ?>
 <div class="row">
